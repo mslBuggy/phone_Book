@@ -19,9 +19,13 @@ import java.util.Map;
  *
  */
 public class PhoneBook {
-	
-	
 	private Map<String, Person> bookMap;
+	public Map<String, Person> getBookMap() {
+		return bookMap;
+	}
+	public void setBookMap(Map<String, Person> bookMap) {
+		this.bookMap = bookMap;
+	}
 	public void addEntry(Person p) {
 		bookMap.put(p.getName(), p);
 	}
@@ -34,6 +38,5 @@ public class PhoneBook {
 			System.out.println("No person named " + name + " in phone book.");
 		}
 	}
-	
 	
 }
