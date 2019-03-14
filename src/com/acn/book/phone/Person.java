@@ -29,4 +29,14 @@ public class Person {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder("Name: ");
+		sb.append(name);
+		sb.append("\nAddress: ");
+		sb.append(address);
+		sb.append("\nPhone no.: ");
+		sb.append(phoneNumber);
+		return sb.toString();
+	}
 }
