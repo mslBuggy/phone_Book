@@ -21,7 +21,19 @@ import java.util.Map;
 public class PhoneBook {
 	
 	
-	Map<String, Person> bookMap = new HashMap<>();
+	private Map<String, Person> bookMap;
+	public void addEntry(Person p) {
+		bookMap.put(p.getName(), p);
+	}
+	public void deleteEntry(String name) {
+		if(bookMap.containsKey(name)) {
+			Person p = bookMap.get(name);
+			System.out.println("Deleting " + name + "with address " + p.getAddress() + " and number " + p.getPhoneNumber());
+			bookMap.remove(name);
+		}else {
+			System.out.println("No person named " + name + " in phone book.");
+		}
+	}
 	
 	
 }
