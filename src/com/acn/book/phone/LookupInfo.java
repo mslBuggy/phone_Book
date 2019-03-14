@@ -35,6 +35,8 @@ public class LookupInfo {
 				 * if found, print contact address
 				 * else "no address saved for Person"
 				 */
+				
+				
 				System.out.println("Hallo " + sIn);
 				/* TODO
 				 * 3. search phone#: if found, print phone#
