@@ -36,7 +36,7 @@ public class PhoneBook {
 	public void deleteEntry(String name) {
 		if(bookMap.containsKey(name)) {
 			Person p = bookMap.get(name);
-			System.out.println("Deleting " + name + "with address " + p.getAddress() + " and number " + p.getPhoneNumber());
+			System.out.println("Deleting " + name + " with address " + p.getAddress() + " and number " + p.getPhoneNumber());
 			bookMap.remove(name);
 		}else {
 			System.out.println("No person named " + name + " in phone book.");

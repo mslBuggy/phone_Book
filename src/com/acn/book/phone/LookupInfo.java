@@ -53,16 +53,21 @@ public class LookupInfo {
 						if (pBook.containsKey(sIn)) {
 							//Key already exists
 							System.out.println("Person with this name already exists. New entry cannot be added");
-						}else {
+						} else if (sIn.equals("")){
+							System.out.println("Name field cannot be empty.");
+						} else {
 							Person p = new Person(sIn, null, null);
 							System.out.println("Enter address of new entry, or press enter to skip.");
 							sIn = in.readLine();
-							p.setAddress(sIn);
+							if(!sIn.equals(""))
+								p.setAddress(sIn);
 							System.out.println("Enter phone number of new entry, or press enter to skip.");
 							sIn = in.readLine();
-							p.setPhoneNumber(sIn);
+							if(!sIn.equals(""))
+								p.setPhoneNumber(sIn);
 							pb.addEntry(p);
 							pBook.put(p.getName(), p);
+							System.out.println(pBook);
 						}
 					}
 				}
@@ -88,7 +93,7 @@ public class LookupInfo {
 
 		}
 		in.close();
-		System.out.println("Goodbye");
+		System.out.println("Goodbye.");
 		System.exit(0);
 
 	}
