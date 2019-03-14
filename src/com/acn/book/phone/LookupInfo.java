@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class LookupInfo {
@@ -40,8 +42,18 @@ public class LookupInfo {
 				 * if found, print contact address
 				 * else "no address saved for Person"
 				 */
+//				List<String> addresses = new ArrayList<String>();
+//				
+//				System.out.println("Seeking address: ");
+//				
+//				BufferedReader in1 = new BufferedReader(new InputStreamReader(System.in));
+//				
+//				String searchedAd = in1.readLine();
 				
+				System.out.println(pBook.get(sIn).getAddress());
+				}	
 				
+			
 				System.out.println("Hallo " + sIn);
 				/* TODO
 				 * 3. search phone#: if found, print phone#
@@ -52,11 +64,11 @@ public class LookupInfo {
 			// TODO 4. print prompt again, wait for input
 			}
 
-		}
-		in.close();
-		System.out.println("Goodbye");
-		System.exit(0);
+		}}
+//		//in.close();
+//		System.out.println("Goodbye");
+//		System.exit(0);
 
-	}
+	
 
-}
+
