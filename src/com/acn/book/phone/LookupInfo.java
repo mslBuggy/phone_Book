@@ -36,13 +36,12 @@ public class LookupInfo {
 				System.out.println("A hollow voice says \"PLUGH\".");
 				PhoneBook pb = new PhoneBook(pBook);
 				while(true) {
+					System.out.println("Enter 1 to add an entry, 2 to remove. PLUGH exits.");
 					sIn = in.readLine();
 					if(sIn.equals("PLUGH")) {
 						System.out.println("Normal function restored.");
 						continue PROMPT;
 					}
-					System.out.println("Enter 1 to add an entry, 2 to remove.");
-					sIn = in.readLine();
 					if(sIn.equals("2")) {
 						System.out.println("Enter name of the entry to delete");
 						sIn = in.readLine();
@@ -56,7 +55,14 @@ public class LookupInfo {
 							System.out.println("Person with this name already exists. New entry cannot be added");
 						}else {
 							Person p = new Person(sIn, null, null);
+							System.out.println("Enter address of new entry, or press enter to skip.");
+							sIn = in.readLine();
+							p.setAddress(sIn);
+							System.out.println("Enter phone number of new entry, or press enter to skip.");
+							sIn = in.readLine();
+							p.setPhoneNumber(sIn);
 							pb.addEntry(p);
+							pBook.put(p.getName(), p);
 						}
 					}
 				}
