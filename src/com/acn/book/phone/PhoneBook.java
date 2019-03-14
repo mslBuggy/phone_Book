@@ -19,6 +19,10 @@ import java.util.Map;
  *
  */
 public class PhoneBook {
+	public PhoneBook(Map<String, Person> bookMap) {
+		super();
+		this.bookMap = bookMap;
+	}
 	private Map<String, Person> bookMap;
 	public Map<String, Person> getBookMap() {
 		return bookMap;

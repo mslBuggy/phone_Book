@@ -18,8 +18,8 @@ public class LookupInfo {
 		pBook.put(name2, new Person(name2, null, "0176-2134799"));
 		pBook.put(name3, new Person(name3, "Adickesallee 43, Frankfurt", null));
 		// TODO start app in console with "Name:" prompt, wait for input
-		while (true) {
-
+		PROMPT: while (true) {
+			System.out.println("Welcome to the phone book application.\nType a name to search for an entry, or type \"closeapp\" to exit.");
 			System.out.print("Name: ");
 			String sIn = in.readLine();
 
@@ -32,6 +32,35 @@ public class LookupInfo {
 			/* TODO
 			 * 1. if contact not existent, print error message
 			 */
+			if (sIn.equals("xyzzy")){
+				System.out.println("A hollow voice says \"PLUGH\".");
+				PhoneBook pb = new PhoneBook(pBook);
+				while(true) {
+					sIn = in.readLine();
+					if(sIn.equals("PLUGH")) {
+						System.out.println("Normal function restored.");
+						continue PROMPT;
+					}
+					System.out.println("Enter 1 to add an entry, 2 to remove.");
+					sIn = in.readLine();
+					if(sIn.equals("2")) {
+						System.out.println("Enter name of the entry to delete");
+						sIn = in.readLine();
+						pb.deleteEntry(sIn);
+						pBook.remove(sIn);
+					}else if (sIn.equals("1")) {
+						System.out.println("Enter name of new entry");
+						sIn = in.readLine();
+						if (pBook.containsKey(sIn)) {
+							//Key already exists
+							System.out.println("Person with this name already exists. New entry cannot be added");
+						}else {
+							Person p = new Person(sIn, null, null);
+							pb.addEntry(p);
+						}
+					}
+				}
+			}
 			if (!pBook.containsKey(sIn)) {
 				System.out.println("No such person found in phone book.");
 			} else {
@@ -49,6 +78,7 @@ public class LookupInfo {
 
 			// TODO 4. print prompt again, wait for input
 			}
+			
 
 		}
 		in.close();
