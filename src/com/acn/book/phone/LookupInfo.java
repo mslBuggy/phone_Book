@@ -2,13 +2,9 @@ package com.acn.book.phone;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class LookupInfo {
 
@@ -91,12 +87,12 @@ public class LookupInfo {
 				System.out.println(pBook.get(sIn).getAddress());
 			}
 
-			System.out.println("Hallo " + sIn);
+			// System.out.println("Hallo " + sIn);
 			/*
 			 * TODO 3. search phone#: if found, print phone# else, printout
 			 * "no phone number saved for Person"
 			 */
-			System.out.println("Nummer " + sIn);
+			// System.out.println("Nummer " + sIn);
 
 			// TODO 4. print prompt again, wait for input
 		}
