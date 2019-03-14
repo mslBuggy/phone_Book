@@ -52,6 +52,7 @@ public class LookupInfo {
 
 		}
 		in.close();
+		System.out.println("Goodbye");
 		System.exit(0);
 
 	}
